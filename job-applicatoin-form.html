@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Application Form</title>
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #cccccc;
+    padding: 30px;
+  }
+
+  .form-box {
+    background: white;
+    width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #999;
+  }
+
+  h1 {
+    color: #1a2a4a;
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .photo-box {
+    width: 110px;
+    height: 120px;
+    border: 1px solid #999;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding: 10px;
+    line-height: 1.6;
+  }
+
+  
+  .section-title {
+    background: #1a2a4a;
+    color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  
+  .section-body {
+    border: 1px solid #aaa;
+    border-top: none;
+    padding: 12px;
+  }
+
+  
+  .row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .field label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .field input {
+    border: none;
+    border-bottom: 1px solid #555;
+    padding: 3px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .field textarea {
+    border: none;
+    border-bottom: 1px solid #555;
+    font-size: 13px;
+    resize: none;
+    height: 40px;
+    outline: none;
+    font-family: Arial, sans-serif;
+  }
+
+  
+  .gender-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  
+  .dob {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 3px;
+  }
+
+  .dob input {
+    border: none;
+    width: 40px;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+  }
+
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  table th {
+    background: #e0e4ec;
+    border: 1px solid #aaa;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  table td {
+    border: 1px solid #aaa;
+    height: 28px;
+  }
+
+  table td input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 6px;
+    font-size: 13px;
+    outline: none;
+    background: transparent;
+  }
+
+  
+  .check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .check-row input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #555;
+    flex: 1;
+    font-size: 13px;
+    outline: none;
+    min-width: 100px;
+  }
+
+  
+  .skills-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .skills-col {
+    flex: 1;
+  }
+
+  .skills-col label {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .skills-col input {
+    border: none;
+    border-bottom: 1px solid #555;
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+    font-size: 13px;
+    outline: none;
+    padding: 2px;
+  }
+
+  
+  .declaration {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  
+  .sign-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .sign-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .sign-field input {
+    border: none;
+    border-bottom: 1px solid #555;
+    width: 180px;
+    font-size: 13px;
+    outline: none;
+  }
+
+  
+  .official-title {
+    background: #e8eaee;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #1a2a4a;
+  }
+
+  .official-body {
+    border: 1px solid #aaa;
+    padding: 10px 12px;
+  }
+
+  .official-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  .official-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .official-field label {
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .official-field input {
+    border: none;
+    border-bottom: 1px solid #555;
+    flex: 1;
+    font-size: 13px;
+    outline: none;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+
+  .ref-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="form-box">
+
+  
+  <div class="header">
+    <div>
+      <h1>JOB APPLICATION FORM</h1>
+      <p class="subtitle">Please fill in this form completely and accurately.<br>All information provided will be treated as confidential.</p>
+    </div>
+    <div class="photo-box">
+      Photograph<br>(Passport Size)<br>Affix Recent<br>Photo
+    </div>
+  </div>
+
+  
+  <div class="section-title">POSITION APPLIED FOR</div>
+  <div class="section-body">
+    <div class="row">
+      <div class="field">
+        <label>Position / Job Title</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Department</label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>Expected Salary</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Date Available to Join</label>
+        <input type="text">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section-title">1. PERSONAL INFORMATION</div>
+  <div class="section-body">
+
+    <div class="row">
+      <div class="field" style="flex:2">
+        <label>Full Name (As per ID Proof)</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Date of Birth (DD/MM/YYYY)</label>
+        <div class="dob">
+          <input type="text" maxlength="2" placeholder="DD">
+          /
+          <input type="text" maxlength="2" placeholder="MM">
+          /
+          <input type="text" maxlength="4" placeholder="YYYY">
+        </div>
+      </div>
+      <div class="field">
+        <label>Gender</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender"> Male</label>
+          <label><input type="radio" name="gender"> Female</label>
+          <label><input type="radio" name="gender"> Other</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Father's / Guardian's Name</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Mother's Name</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Email Address</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Alternate Phone Number</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Current Address</label>
+        <textarea></textarea>
+      </div>
+      <div class="field">
+        <label>Permanent Address</label>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>City</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>State</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>PIN Code</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="check-row">
+      <span><b>Are you legally eligible to work in this country?</b></span>
+      <label><input type="checkbox"> Yes</label>
+      <label><input type="checkbox"> No</label>
+      <span>If No, please specify:</span>
+      <input type="text">
+    </div>
+
+  </div>
+
+  
+  <div class="section-title">2. EDUCATIONAL QUALIFICATION</div>
+  <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Qualification</th>
+          <th>Name of Institution</th>
+          <th>Board / University</th>
+          <th>Year of Passing</th>
+          <th>Percentage / CGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:4px 8px; font-size:12px; font-weight:bold; background:#f9f9f9;">High School / SSC</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td style="padding:4px 8px; font-size:12px; font-weight:bold; background:#f9f9f9;">Higher Secondary / HSC</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td style="padding:4px 8px; font-size:12px; font-weight:bold; background:#f9f9f9;">Bachelor's Degree</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td style="padding:4px 8px; font-size:12px; font-weight:bold; background:#f9f9f9;">Master's Degree</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td style="padding:4px 8px; font-size:12px; font-weight:bold; background:#f9f9f9;">Other (Specify)</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="section-title">3. WORK EXPERIENCE (Start with the most recent)</div>
+  <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Job Title</th>
+          <th>From (MM/YYYY)</th>
+          <th>To (MM/YYYY)</th>
+          <th>Total Experience</th>
+          <th>Key Responsibilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="check-row">
+      <span><b>Have you ever been employed with our organization before?</b></span>
+      <label><input type="checkbox"> Yes</label>
+      <label><input type="checkbox"> No</label>
+      <span>If Yes, please specify:</span>
+      <input type="text">
+    </div>
+  </div>
+
+  
+  <div class="section-title">4. SKILLS &amp; ADDITIONAL INFORMATION</div>
+  <div class="section-body">
+    <div class="skills-row">
+      <div class="skills-col">
+        <label>Key Skills / Technical Skills:</label>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+      <div class="skills-col">
+        <label>Languages Known:</label>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+      <div class="skills-col">
+        <label>Certification / Training (if any):</label>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+    </div>
+
+    <hr>
+    <span class="ref-label">References (Optional)</span>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Company / Organization</th>
+          <th>Phone Number</th>
+          <th>Email Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="section-title">5. DECLARATION</div>
+  <div class="section-body">
+    <p class="declaration">
+      I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.
+      I understand that any false or misleading information may disqualify me from consideration for employment or may
+      result in my dismissal if hired.
+    </p>
+    <div class="sign-row">
+      <div class="sign-field">
+        <span>Date:</span>
+        <input type="text">
+      </div>
+      <div class="sign-field">
+        <span>Signature:</span>
+        <input type="text">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="official-title">FOR OFFICIAL USE ONLY</div>
+  <div class="official-body">
+    <div class="official-row">
+      <div class="official-field">
+        <label>Application Received On:</label>
+        <input type="text">
+      </div>
+      <div class="official-field">
+        <label>Received By:</label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="official-row">
+      <div class="official-field" style="flex:2">
+        <label>Remarks:</label>
+        <input type="text">
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; font-size:13px; font-weight:bold;">
+        Shortlisted:
+        <label><input type="checkbox"> Yes</label>
+        <label><input type="checkbox"> No</label>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
